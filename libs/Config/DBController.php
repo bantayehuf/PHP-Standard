@@ -46,7 +46,7 @@ class DBController {
         $num = count($value);
         $colCount=1;
         for($i=0 ; $i<$num ; $i++){
-            $this->statement->bindParam($colCount , trim(htmlentities($value[$i])) , PDO::PARAM_STR);
+            $this->statement->bindParam($colCount , htmlentities(trim($value[$i])) , PDO::PARAM_STR);
             $colCount=$colCount+1;
         }
     }
